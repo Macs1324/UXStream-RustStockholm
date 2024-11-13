@@ -1,0 +1,32 @@
+<div>
+  <h2>Server List</h2>
+
+  <table>
+    <tr>
+      <th>Server Name</th>
+      <th>Server IP</th>
+      <th>Server Status</th>
+    </tr>
+    {%for server in servers%}
+    <tr>
+      {% if let Some(name) = server.name%}
+        <td>{{name}}</td>
+      {% else %}
+        <td>Unnamed</td>
+      {%endif%}
+      <td>{{server.ip}}</td>
+      {%match server.status%}
+
+        {%when ServerStatus::Available%}
+          <td style="color: green;">Available</td>
+
+        {%when ServerStatus::Offline%}
+          <td style="color: red;">Offline</td>
+
+        {%when ServerStatus::Busy%}
+          <td style="color: gray;">Busy</td>
+      {%endmatch%}
+    </tr>
+    {%endfor%}
+  </table>
+</div>

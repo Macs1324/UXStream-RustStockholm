@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Add PicoCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+    >
+
+    <!-- Add HTMX -->
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Awesome HTMX Dashboard</h1>
+    <main>
+      <div>
+        <div hx-get="/servers" hx-swap="innerHTML" hx-trigger="load">
+
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
